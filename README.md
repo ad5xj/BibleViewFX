@@ -1,8 +1,8 @@
 # BibleViewFX #
 
-This is an non-trivial Java FX project written using NetBeans 24 and OpenJavaFX 23
+This is an non-trivial Java FX project written using NetBeans 24 and OpenJavaFX 23+
 to loosely resemble the BibleDesktop application from Crosswire. Considerable liberty
-has been exercised to update code for Java 23 and OpenJavaFX 23 and to enhanse the
+has been exercised to update code for Java 23+ and OpenJavaFX 23+ and to enhanse the
 error reporting and logging using log4j and slf4j logging faciities.
 
 ### Purpose ###
