@@ -1,0 +1,44 @@
+/**
+ * \page credits_page Credits and Copyrights
+ *
+ * <p style="font-size: 18pt; margin-left: 15px; margin-right: 15%;"> 
+ *   Many of the graphics in this application come from public sources licensed as GPL or Creative Commons License.
+ *   Some graphics used are obtained from various sources including freeiconds.com, iconfinder.com, and others. 
+ *   Many of the icons used are created by the talented artist Silvestre Herrera from his Neu, Nou, and Gion icon sets. 
+ *   Many thanks to Silvestre for this contribution to the Open Source community.
+ * </p>
+ *
+ * <p style="font-size: 18pt;  margin-left: 15px; margin-right: 15%;"> 
+ *   Also included may be icons and graphics from the Open Source Oxygen collection.
+ * </p>
+ *
+ * <p style="font-size: 18pt; margin-left: 15px; margin-right: 15%;"> 
+ *   This project is written using Java SDK 23, and OpenJavaFX 23 Open Source Framework. You should have received 
+ *   the GPL license in available in the distributed files. Java and JavaFX are GPL v2 or higher or LGPL licensed. 
+ *   All rights and restrictions belong to Oracle or Gluon pertaining to the Java and JavaFX Open Source Framework 
+ *   and to Apache Software Foundation for the NetBeans IDE. Some of the code in jNotesFX is derived from, and is 
+ *   highly modified online sources and tutorials under the GPL guidelines.
+ * </p>
+ * 
+ * <p style="font-size: 18pt;  margin-left: 15px; margin-right: 15%;"> 
+ *   JSword from the Crosswire and Sword Libraries and is free software; you can redistribute it and/or modify it under
+ *   the terms of the GNU Lesser General Public License, version 2.1 or later as published by the Free Software Foundation.<br>
+ * </p>
+ *
+ * <p style="font-size: 16pt;  margin-left: 15px; margin-right: 15%;"> 
+ *   THIS PROGRAM IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL, WITHOUT ANY WARRANTY;<br>
+ *   WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br>
+ *   See the GNU Lesser General Public License for more details.
+ * </p>
+ *
+ * <p style="font-size: 16pt;  margin-left: 15px; margin-right: 15%;"> 
+ *   The License is available on the internet at:<br>
+ *       http://www.gnu.org/copyleft/lgpl.html<br>
+ *   or by writing to:<br>
+ *      Free Software Foundation, Inc.<br>
+ *      59 Temple Place - Suite 330<r>
+ *      Boston, MA 02111-1307, USA<br>
+ * </p>
+ *
+ * &copy; CrossWire Bible Society, 2005 - 2016
+

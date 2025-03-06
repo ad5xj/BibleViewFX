@@ -1,0 +1,229 @@
+/*!
+ * \page api_docs_old Programming API Documentation
+ * <img style="width: 49%; border: 0 solid white; margin-right: 15px; " align="left" src="../images/mainwindow.png" />
+ * \section section_api Application Programming Interface
+ * - - -
+ * \subsection apigen_sec General
+ *
+ * This application is written entirely in Java <img style="width: 30px; border: 0 solid white;" src="java.png"> and 
+ * Gluon Open JavaFX <img style="width: 100px; border: 0 solid white; margin-right:15px;" src="gluon.png"> and
+ * Gluon SceneBuilder 23 for the FXML GUI components available from several sources. Windows are styled using 
+ * cascading stylesheets found in the resources/CSS folder. Only experienced programmers should have a need to
+ * modify the stylesheets. Adequate configuration is provided for most visible elements such as font family and size.
+ *
+ * This work started with Java SDK 23. Later versions may be used as they are made available when they 
+ * are necessarily backward compatible with the earlier version. Non-compatible updates may require a complete 
+ * re-compile and even syntax changes in the code. It will not be backward compatible with versions earlier than Java SDK 17
+ * nor any JavaFX version not compatible with Java 17.
+ *
+ * Code in many modules are highly modified versions of any example code in online documentation
+ * or tutorials. Each carries the sustained LGPL license from the original code offered by the author.
+ * See the copyright notice on the Copyright page.
+ *
+ * The Apache NetBeans IDE <img style="width: 30px; border: o solid white; margin-left: 10px; margin-right: 5px;" src="apache_netbeans.png"> 
+ * will accommodate the built-in Maven project or you may wish to use external Maven tools (v3.6.3 or later) as desired. Java SDK 20 
+ * and JavaFX 20 will compile on Linux (almost all flavors), Mac OS X mountain lion or higher with little modification, and 
+ * Windows 10 or later if the developer knows how to use Maven and can modify the project files for use on the development platform. 
+ * The code is designed for the 64 bit verion of Java and JavaFX only.<br /><br />
+ *
+ *
+ * All source code is written in Java 23 or later or JavaFX 23 or later. The project is laid out in the customary 
+ * structure for a MAVEN project:
+ * <div style="margin-left:5%;">
+ * <pre>
+ * BibleViewFX
+ *    |_src
+ *        |_main
+ *            |_java
+ *            |_resources
+ *                  |_CSS
+ *                  |_Data
+ *                  |_FXML
+ *                  |_Images
+ * </pre>
+ * </div>
+ * NetBeans uses the MAVEN plugin to compile and run the code in the IDE. Or, you may start the application 
+ * from the command line in the project root folder with:
+ * <div style="margin-left:5%;">
+ * <pre>
+ * java -jar target/BibleView-0.0-run.jar
+ * </pre>
+ * It is also possible to start the application using a simple starup script customized for your system. A 
+ * typical script should look something like:
+ * <pre>
+     #!/bin/sh
+
+     # Parts of this file were derived from the ant startup script for unix.
+     # Copyright (c) 2001-2003 The Apache Software Foundation.
+
+     # OS specific support.  $var _must_ be set to either true or false.
+     cygwin=false;
+     darwin=false;
+     case "`uname`" in
+       CYGWIN*) cygwin=true ;;
+       Darwin*) darwin=true
+           if [ -z "$JAVA_HOME" ] ; then
+             JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home   
+           fi
+           ;;
+     esac
+
+     if [ -z "$JSWORD_HOME" ] ; then
+       ## resolve links - $0 may be a link to jsword's home
+       PRG="$0"
+       progname=`basename "$0"`
+       saveddir=`pwd`
+
+       # need this for relative symlinks
+       dirname_prg=`dirname "$PRG"`
+       cd "$dirname_prg"
+  
+       while [ -h "$PRG" ] ; do
+         ls=`ls -ld "$PRG"`
+         link=`expr "$ls" : '.*-> \(.*\)$'`
+         if expr "$link" : '.*/.*' > /dev/null; then
+           PRG="$link"
+         else
+           PRG=`dirname "$PRG"`"/$link"
+         fi
+       done
+
+       JSWORD_HOME=`dirname "$PRG"`
+
+       cd "$saveddir"
+
+       # make it fully qualified
+       JSWORD_HOME=`cd "$JSWORD_HOME" && pwd`
+     fi
+
+     cd $JSWORD_HOME
+
+     # Root contains Java directory with JREs, modules and mods.d
+     ROOT=`dirname $JSWORD_HOME`
+
+     # For Cygwin, ensure paths are in UNIX format before anything is touched
+     if $cygwin ; then
+       [ -n "$JSWORD_HOME" ] &&
+         JSWORD_HOME=`cygpath --unix "$JSWORD_HOME"`
+       [ -n "$JAVA_HOME" ] &&
+         JAVA_HOME=`cygpath --unix "$JAVA_HOME"`
+       [ -n "$CLASSPATH" ] &&
+         CLASSPATH=`cygpath --path --unix "$CLASSPATH"`
+     fi
+
+     if [ -z "$JAVACMD" ] ; then 
+       if [ -n "$JAVA_HOME"  ] ; then
+         if [ -x "$JAVA_HOME/jre/sh/java" ] ; then 
+           # IBM's JDK on AIX uses strange locations for the executables
+           JAVACMD="$JAVA_HOME/jre/sh/java"
+         else
+           JAVACMD="$JAVA_HOME/bin/java"
+    fi
+       else
+         JAVACMD=`ls -d $ROOT/Java/linux/jre*/bin/java 2> /dev/null`
+         if [ -z "$JAVACMD" ] ; then 
+           JAVACMD=`which java 2> /dev/null `
+           if [ -z "$JAVACMD" ] ; then 
+             JAVACMD=java
+           fi
+         fi
+       fi
+     fi
+
+     if [ ! -x "$JAVACMD" ] ; then
+       echo "Error: JAVA_HOME is not defined correctly."
+       echo "  We cannot execute $JAVACMD"
+       exit 1
+     fi
+
+     if [ -n "$CLASSPATH" ] ; then
+       LOCALCLASSPATH="$CLASSPATH"
+     fi
+
+     # define the location of the jar files
+     JSWORD_LIB="$JSWORD_HOME"
+     if [ -e "${JSWORD_LIB}/lib" ] ; then
+       JSWORD_LIB=$JSWORD_HOME
+     fi
+
+     # This is redundant if we are using the endorsed.dirs method
+     for i in "${JSWORD_LIB}"/*.jar
+     do
+       # if the directory is empty, then it will return the input string
+       # this is stupid, so case for it
+       if [ -f "$i" ] ; then
+         if [ -z "$LOCALCLASSPATH" ] ; then
+           LOCALCLASSPATH="$i"
+         else
+           LOCALCLASSPATH="$i":"$LOCALCLASSPATH"
+         fi
+       fi
+     done
+
+     # For Cygwin, switch paths to Windows format before running java
+     if $cygwin; then
+       JSWORD_HOME=`cygpath --windows "$JSWORD_HOME"`
+       JAVA_HOME=`cygpath --windows "$JAVA_HOME"`
+       CLASSPATH=`cygpath --path --windows "$CLASSPATH"`
+       LOCALCLASSPATH=`cygpath --path --windows "$LOCALCLASSPATH"`
+       CYGHOME=`cygpath --windows "$HOME"`
+     fi
+
+     # "-Djava.endorsed.dirs=${JSWORD_LIB}"
+     # -classpath "${JSWORD_HOME}/resource"
+     # Note: We always pass the "apple" arguments, even when not on a mac.
+     JSWORD_PROPERTIES=-Dapple.laf.useScreenMenuBar=true
+     JSWORD_PROPERTIES="$JSWORD_PROPERTIES -Dcom.apple.mrj.application.apple.menu.about.name=BibleViewFX"
+     [ -e "$JSWORD_HOME/JSword" ] && JSWORD_PROPERTIES="$JSWORD_PROPERTIES -Djsword.home=$JSWORD_HOME/JSword"
+     [ -e "$ROOT/mods.d" ]        && JSWORD_PROPERTIES="$JSWORD_PROPERTIES -Dsword.home=$ROOT"
+
+     cd BibleView
+
+     java -jar BibleViewFX-0.0-run.jar
+ * </pre>
+ *
+ * This script pre-supposes the compiled application runtime is called from a user folder named bin/Bibleview.
+ * and is executed in the root of the /[user_path]/bin] for simplicity and clarity sake. 
+ * </div>
+ * <br><br><br>
+ * <b>Design Facility</b><br><br>
+ * The GUI forms and dialogs are designed using the Gluon SceneBuilder utility and implemented with JavaFX code 
+ * loading the FXML file to define windows and the objects contained in each window. Styling of the main window
+ * is accomplished using the OpenJavaFX CSS hooks. Each unique style is defined in a CSS 3 .CSS file in the 
+ * resources/CSS folder of the source. These are provided as a default resource and example for customization.
+ * Accomplished JavaFX programmers may wish to add styles or modify the existing styles as desired, being aware
+ * of the limitations of fonts and sizes on the display of design elements. 
+ *
+ * <b>Application Structure</b><br><br>
+ * The JavaFX API is arranged into functional modules. The module name implies the funtion group of each module.
+ * For instance, the GUI module contains the source code for each of the controllers for the GUI. There are specialty
+ * modules such as SETTINGS that implement the ini4j library.
+ * <br><br>
+ * <b>Planned enhancements</b><br><br>
+ * &bull; We would like to enhance the bible study tools to include a Strongs Concordance window that tracks along with
+ * the Bible Text display instead of showing the Strongs numbers in the text just show a marker. This feature would
+ * be activated by a choice on the view menu of the main application window.<br>
+ * <br>
+ * &bull; Also we would like to enhance the bible study tools to include a Greek and Hebrew lexicon window that will display
+ * the word in Greek or Hebrew along with the definition. This would would be selected from the Bible text window
+ * by click and drag highlight, then pressing a fuction key and/or a menu choice.<br><br>
+ * &bull; It would also be helpful to add a commentary window.<br><br>
+ *
+ * &bull; The same would be true for a maps window to display full size maps from various sources selectable from the settings menu.<br><br>
+ *
+ * &bull; Another feature we would like to add is a separate notes window. This window would be a simple plaintext notepad
+ * with limited highlight features such as text bold, text italic, text underline, etc.<br> <br>
+ *
+ * These features would <b>not</b> be implemented as child window(s) of the main application(MDI), but rather a separate window
+ * that can be positioned anywhere on the display(s) or minimized while maintaining the communication with the Bible text
+ * display for synchronization thru value listeners and public method calls (signal/slot mechanics) in each controller module.<br>
+ *<br>
+ * <br><br><br><br><br><br><br><br><br>
+ * <br><br><br><br><br><br><br><br><br>
+ * <br><br><br><br><br><br><br><br><br>
+ * <br><br><br><br><br><br><br><br><br>
+ * <br><br><br><br><br><br><br><br><br>
+ * <br><br><br><br><br><br><br><br><br>
+ * <br><br><br><br>
+ *
+ */

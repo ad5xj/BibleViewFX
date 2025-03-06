@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="996.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kds.GUI.BiblesConfigController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem id="menuFileClose" fx:id="menuFileClose" mnemonicParsing="false" onAction="#actionClose" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="menuHelpAboutConfig" mnemonicParsing="false" onAction="#actionHelpAboutConfig" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.19052523171987643">
+        <items>
+          <AnchorPane>
+               <children>
+                  <Accordion layoutX="1.0" layoutY="14.0">
+                    <panes>
+                      <TitledPane id="toolButtonBibles" fx:id="toolButtonBibles" animated="false" onMouseClicked="#showBiblePane" prefHeight="230.0" text="Bibles">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </TitledPane>
+                      <TitledPane id="toolButtonBibleDisplay" fx:id="toolButtonBibleDisplay" animated="false" expanded="false" onMouseClicked="#showDisplayPane" prefHeight="230.0" prefWidth="202.0" text="Bible Display">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </TitledPane>
+                      <TitledPane id="toolButtonBooks" fx:id="toolButtonBooks" animated="false" expanded="false" onMouseClicked="#showBooksPane" prefHeight="230.0" text="Books">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </TitledPane>
+                        <TitledPane id="toolButtonApp" fx:id="toolButtonApp" animated="false" expanded="false" onMouseClicked="#showAppPane" prefHeight="230.0" text="Application">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </AnchorPane>
+          <AnchorPane>
+               <children>
+                  <StackPane prefHeight="533.0" prefWidth="762.0">
+                     <children>
+                        <Pane id="paneBibles" fx:id="paneBibles" prefHeight="533.0" prefWidth="609.0">
+                           <children>
+                              <VBox id="paneBibles" fx:id="paneBiblesLayout" prefHeight="558.0" prefWidth="777.0">
+                                 <children>
+                                    <Label id="lblPaneTitle" fx:id="lblBiblesTttle" alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="610.0" text="Bibles Preferences" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Liberation Serif" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <GridPane fx:id="gridBibles" prefHeight="180.0" prefWidth="698.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="328.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="350.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="22.0" prefWidth="310.0" text="Use Current Bible :" textAlignment="RIGHT" />
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="22.0" prefWidth="310.0" text="Default Bible :" textAlignment="RIGHT" GridPane.rowIndex="1" />
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="22.0" prefWidth="310.0" text="Default Daily Devotional :" textAlignment="RIGHT" GridPane.rowIndex="2" />
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="22.0" prefWidth="310.0" text="Default Greek Definitions (Strong's) :" textAlignment="RIGHT" GridPane.rowIndex="3" />
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="22.0" prefWidth="310.0" text="Default Hebrew Definitions (Strong's) :" textAlignment="RIGHT" GridPane.rowIndex="4" />
+                                          <Label prefHeight="22.0" prefWidth="310.0" text="Default Greek Morphology Parsing and Guides :" GridPane.rowIndex="5" />
+                                          <ChoiceBox id="cboDefaultBible" fx:id="cboDefaultBible" prefHeight="24.0" prefWidth="436.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <ChoiceBox id="cboDefaultDev" fx:id="cboDefaultDev" prefHeight="24.0" prefWidth="435.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <ChoiceBox id="cboGreekDef" fx:id="cboGreekDef" prefHeight="24.0" prefWidth="434.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <ChoiceBox id="cboDefaultGreekDef" fx:id="cboDefaultGreekDef" prefHeight="24.0" prefWidth="436.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <ChoiceBox id="cboDefaultGreekMorph" fx:id="cboDefaultGreekMorph" prefHeight="24.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <RadioButton id="radioCurBibleYes" fx:id="radioCurBibleYes" mnemonicParsing="false" selected="true" text="Yes" GridPane.columnIndex="1" />
+                                          <RadioButton id="radioCurBibleNo" fx:id="radioCurBibleNo" mnemonicParsing="false" text="No" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="57.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane id="paneDisplay" fx:id="paneDisplay" prefHeight="200.0" prefWidth="200.0" visible="false">
+                           <children>
+                              <VBox prefHeight="556.0" prefWidth="771.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="772.0" text="Bible Display Preferences" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Liberation Serif" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <GridPane hgap="6.0" prefHeight="294.0" prefWidth="756.0" vgap="3.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="377.0" minWidth="100.0" prefWidth="260.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="499.0" minWidth="10.0" prefWidth="499.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <VBox.margin>
+                                          <Insets bottom="3.0" top="1.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="22.0" prefWidth="260.0" text="Use Full Book Name :" textAlignment="RIGHT" />
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="22.0" prefWidth="260.0" text="Open links in same Bible View :" textAlignment="RIGHT" GridPane.rowIndex="1" />
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="22.0" prefWidth="260.0" text="Parallel Bible Limit :" textAlignment="RIGHT" GridPane.rowIndex="2" />
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="22.0" prefWidth="260.0" text="List Commentaries with Bibles :" textAlignment="RIGHT" GridPane.rowIndex="3" />
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="22.0" prefWidth="260.0" text="Show Passage Sidebar :" textAlignment="RIGHT" GridPane.rowIndex="4" />
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="22.0" prefWidth="260.0" text="Verses Per Tab :" textAlignment="RIGHT" GridPane.rowIndex="5" />
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="22.0" prefWidth="260.0" text="Default No. of Matched Verses :" textAlignment="RIGHT" GridPane.rowIndex="6" />
+                                          <Label fx:id="lblFontSel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="22.0" prefWidth="260.0" text="Select Font :" textAlignment="RIGHT" GridPane.rowIndex="7" />
+                                          <ChoiceBox id="cboBibleDisplayFont" fx:id="cboBibleDisplayFont" prefHeight="24.0" prefWidth="221.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                          <ChoiceBox id="cboBibleDisplayFontSize" fx:id="cboBibleDisplayFontSize" prefWidth="60.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                             <GridPane.margin>
+                                                <Insets left="250.0" />
+                                             </GridPane.margin>
+                                          </ChoiceBox>
+                                          <CheckBox id="chkDisplayBold" fx:id="chkDisplayBold" mnemonicParsing="false" text="Bold" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                             <font>
+                                                <Font name="Liberation Serif Bold" size="18.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox id="chkDisplayItalic" fx:id="chkDisplayItalic" mnemonicParsing="false" text="Italic" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                             <font>
+                                                <Font name="Liberation Serif Italic" size="18.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets left="80.0" />
+                                             </GridPane.margin>
+                                          </CheckBox>
+                                          <RadioButton id="radioFullNameYes" fx:id="radioFullNameYes" mnemonicParsing="false" text="Yes" GridPane.columnIndex="1" />
+                                          <RadioButton id="radioFullNameNo" fx:id="radioFullNameNo" mnemonicParsing="false" text="No" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="80.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton id="radioSaveViewYes" fx:id="radioSaveViewYes" mnemonicParsing="false" text="Yes" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <RadioButton id="radioSaveViewNo" fx:id="radioSaveViewNo" mnemonicParsing="false" text="No" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="80.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <Spinner id="spinParallelMax" fx:id="spinParallelMax" prefHeight="24.0" prefWidth="77.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <RadioButton id="radioCommWBiblesYes" fx:id="radioCommWBiblesYes" mnemonicParsing="false" text="Yes" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <RadioButton id="radioCommWBiblesNo" fx:id="radioCommWBiblesNo" mnemonicParsing="false" text="No" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets left="80.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton id="radioShowSideBarYes" fx:id="radioShowSideBarYes" mnemonicParsing="false" text="Yes" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <RadioButton id="radioShowSideBarNo" fx:id="radioShowSideBarNo" mnemonicParsing="false" text="No" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets left="80.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <Spinner id="spinVersesPerTab" fx:id="spinVersesPerTab" prefHeight="24.0" prefWidth="93.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Spinner id="spinDefaultMatchedVerses" fx:id="spinDefaultMatchedVerses" prefHeight="24.0" prefWidth="93.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane id="paneBooks" fx:id="paneBooks" prefHeight="533.0" prefWidth="617.0" visible="false">
+                           <children>
+                              <VBox prefHeight="556.0" prefWidth="777.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="775.0" text="Books Preferences" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Liberation Serif" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <GridPane prefHeight="245.0" prefWidth="777.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="382.0" minWidth="10.0" prefWidth="149.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="628.0" minWidth="10.0" prefWidth="628.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="189.0" minHeight="10.0" prefHeight="175.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="124.0" minHeight="0.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Addl. Book Location :" />
+                                          <Label text="Download Directory :" GridPane.rowIndex="2" />
+                                          <ListView id="listAddlLocations" fx:id="listAddlLocations" prefHeight="62.0" prefWidth="388.0" GridPane.columnIndex="1" />
+                                          <Button id="btnAddBooksLoc" fx:id="btnAddBooksLoc" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="ADD" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="6.0" right="10.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                          <Button fx:id="btnRemoveBooksLoc" disable="true" mnemonicParsing="false" prefHeight="32.0" text="REMOVE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="95.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" prefHeight="32.0" text="Alias Update" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="174.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                          <TextField id="fieldDownloadPath" fx:id="fieldDownloadPath" maxWidth="300.0" prefHeight="32.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Button id="btnBrowse" fx:id="btnBrowse" mnemonicParsing="false" onAction="#showFileChooser" prefHeight="32.0" prefWidth="80.0" text="Browse" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="304.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="3.0" right="3.0" />
+                                       </VBox.margin>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane id="paneApp" fx:id="paneApp" prefHeight="533.0" prefWidth="612.0" visible="false">
+                           <children>
+                              <VBox prefHeight="556.0" prefWidth="775.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="774.0" text="Application Preferences" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Liberation Serif" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <GridPane hgap="3.0" vgap="6.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Language :" />
+                                          <Label text="Initial Layout :" GridPane.rowIndex="1" />
+                                          <Label text="General Font :" GridPane.rowIndex="2" />
+                                          <Label text="Internet Warning :" GridPane.rowIndex="4" />
+                                          <ChoiceBox id="cboAppLanguage" fx:id="cboAppLanguage" prefHeight="24.0" prefWidth="115.0" GridPane.columnIndex="1" />
+                                          <RadioButton mnemonicParsing="false" selected="true" text="Tabbed" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <RadioButton mnemonicParsing="false" text="Windowed" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="100.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton id="radioWebWarnYes" fx:id="radioWebWarnYes" mnemonicParsing="false" text="Yes" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <RadioButton id="radioWebWarnNo" fx:id="radioWebWarnNo" mnemonicParsing="false" text="No" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets left="80.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <ChoiceBox id="cboAppFontFamily" fx:id="cboAppFontFamily" prefHeight="32.0" prefWidth="221.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <ChoiceBox id="cboAppFontSize" fx:id="cboAppFontSize" prefHeight="32.0" prefWidth="85.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="235.0" />
+                                             </GridPane.margin>
+                                          </ChoiceBox>
+                                          <CheckBox id="chkAppBold" fx:id="chkAppBold" mnemonicParsing="false" text="Bold" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="Liberation Serif Bold" size="18.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets left="6.0" />
+                                             </GridPane.margin>
+                                          </CheckBox>
+                                          <CheckBox id="chkAppItalic" fx:id="chkAppItalic" mnemonicParsing="false" text="Italic" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="Liberation Serif Italic" size="18.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets left="94.0" />
+                                             </GridPane.margin>
+                                          </CheckBox>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                     </children>
+                     <padding>
+                        <Insets left="6.0" />
+                     </padding>
+                  </StackPane>
+               </children>
+               <padding>
+                  <Insets left="6.0" />
+               </padding>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <HBox id="btnBar" alignment="BOTTOM_RIGHT" prefHeight="40.0">
+         <children>
+            <Button id="btnOK" fx:id="btnOK" mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" text="OK">
+               <HBox.margin>
+                  <Insets bottom="3.0" left="6.0" right="10.0" top="3.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="btnCancel" fx:id="btnCancel" cancelButton="true" mnemonicParsing="false" onAction="#actionClose" prefHeight="32.0" prefWidth="80.0" text="CANCEL">
+               <HBox.margin>
+                  <Insets bottom="3.0" right="10.0" top="3.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="btnApply" fx:id="btnApply" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" text="Apply">
+               <HBox.margin>
+                  <Insets bottom="3.0" right="10.0" top="3.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

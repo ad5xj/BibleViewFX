@@ -1,0 +1,20 @@
+/**
+ * \page page_bvconfig BibleViewFX Configuration
+ *
+* \section section_config Configuration Main Window
+ *
+ * <div style="border: 0 solid white; width: 50%; float: left; margin-left: 1%; margin-right: 15px;">
+ *   <img style="width: 100%; border: 0 solid white;" src="bvconfig-dev.png">
+ * </div>
+ * <br><br><br><br><br><br><br><br><br><br><br>
+ * <br><br><br><br><br><br><br><br><br><br><br>
+ * <br><br>
+ * \section section_bibles Select Bibles
+ * \section section_devotional Daily Devotionals
+ * \section section_greek Greek Definitions (Strongs)
+ * \section section_hebrew Hebrew Definitions (Strongs)
+ * \section section_greek_morph Greek Morphology
+ * \section section_display Bibles Display
+ * \section section_books Other Works
+ * \section section_app Application Defaults
+  */

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FileDialogController">
+   <center>
+      <TreeView id="tvFolders" fx:id="tvFolders" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="619.0" text="Open File" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Georgia" size="24.0" />
+         </font>
+      </Label>
+   </top>
+   <bottom>
+      <HBox prefHeight="31.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" text="CLOSE">
+               <HBox.margin>
+                  <Insets bottom="2.0" right="10.0" top="2.0" />
+               </HBox.margin>
+            </Button>
+            <Button graphicTextGap="0.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" text="SELECT" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="2.0" right="10.0" top="2.0" />
+               </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" text="CLEAR" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="2.0" right="10.0" top="2.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Liberation Sans" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

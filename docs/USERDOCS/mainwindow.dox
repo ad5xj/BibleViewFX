@@ -1,0 +1,184 @@
+/**
+ * \page main_window_page Main Window
+ * \section section_mainwindow Main Window
+ *
+ * <div style="border: 0 solid white; width: 50%; float: left; margin-left: 1%; margin-right: 15px;">
+ *   <img style="width: 100%; border: 0 solid white;" src="MainWindow-dev.png">
+ * </div>
+ * <br><br><br><br><br><br><br><br><br><br><br>
+ * <br><br><br><br><br><br><br><br><br><br><br>
+ * <br><br>
+ * \section section_startup The BibleViewFX Application
+ * When the application is started the user sees the Main Window (as shown). This window provides
+ * at least two different displays which provide various functions for the user as needed. The smaller 
+ * window on the left is the works listing, The other is the Bible Text display of the selected Bible using
+ * the configured font (see the settings menu).
+ *
+ * On the main Notes list window, there are a number of menu options that can be seen in the top section of that display. These are
+ * discussed at length in the Main Menu Section of this documentation. Many of the menu functions are also available on the
+ * main tool bar also in the top section.<br><br>
+ * \sa ssSettingsMenu Settings Menu
+ *
+ * The application main window is divided into sections as outlined here:
+ * \secreflist
+ * \refitem sMainMenu Main Menu
+ * \refitem sSrchSelection Search Text
+ * \refitem sWorksList Works Listing
+ * \refitem sBibleText Bible Text Area
+ * \refitem sStatusBar Status Bar Area
+ * \endsecreflist
+ * <br><br><br><br>
+ *
+ *
+ * \section sMainMenu Main Window Menu
+ *
+ * <div style="border: 0 solid white; width: 30%; margin-left: 5%; margin-right: 20px; float: left;">
+ *   <img style="width: 100%; border: 0 solid white;" src="mainmenu.png">
+ * </div>
+ *
+ * The top portion of the MainWindow has the Main Window Menu and the current tool bar.
+ *
+ * Navigation of the available works is by using the works display list tool on the left in the left-center section 
+ * or by using the menu choices.
+ * <br><br><br><br><br><br><br><br><br>
+ *
+ * \section sSettings Setttings Menu
+ * <div style="border: 0 solid white; width: 60%; float: left; margin-left: 5%; margin-right: 15px;">
+ *   <img style="width: 100%; border: 0 solid white;" src="settingmenu.png">
+ * </div>
+ * The settings menu consists of several menu options that allow various settings to be selected and saved
+ * as persistent attributes of specific parts of the application.
+ *
+ * The menu choices are:
+ * \secreflist
+ * \refitem page_bvconfig Configuration
+ * \refitem ssDefLibs Default Libraries
+ * \refitem ssThemes  Available Color Themes
+ * \endsecreflist
+ * <br><br><br><br><br><br><br><br><br>
+ * 
+ * \section sConfig Bibles Configuration
+ * <div style="border: 0 solid white; width: 40%; float: left; margin-left: 5%; margin-right: 15px;">
+ *   <img style="width: 100%; border: 0 solid white;" src="bvconfig-dev.png">
+ * </div>
+ * <br><br><br><br><br><br><br><br><br>
+ * <br><br><br><br><br><br><br><br><br>
+ *
+ * \subsection ssDefLibs Default Libraries Configuration
+ * <div style="border: 0 solid white; width: 40%; float: left; margin-left: 5%; margin-right: 15px;">
+ *   <img style="width: 100%; border: 0 solid white;" src="librariesconfig.png">
+ * </div>
+ * <br><br><br><br><br><br><br><br><br>
+ * <br><br><br><br><br><br><br><br><br>
+ * \subsection ssThemes Color Themes Available
+ * There are four basic themes available my default:<br>
+ *  &nbsp;&nbsp;&bull; The default color theme (top left)<br>
+ *  &nbsp;&nbsp;&bull; The Mint color theme (top right)<br>
+ *  &nbsp;&nbsp;&bull; The Dark color theme (bottom left)<br>
+ *  &nbsp;&nbsp;&bull; The Colorful theme (bottom right)<br><br>
+ * \note The color and style of each theme is customize-able using standard CSS 3 syntax in the appropriate<br>
+ * .CSS file located in the resources folder. There is one .CSS file for each color theme. This should only <br>
+ * be attempted when thorough knowledge of CSS 3 and FXML is known.
+ *     
+ * <div style="border: 0 solid white; width: 89%; float: left; margin-left: 5%; margin-right: 15px;">
+ *   <img style="width: 22%; border: 0 solid white;" src="MainWindow-dev.png">
+ *   <img style="width: 22%; border: 0 solid white;" src="minttheme.png"><br>
+ *   <img style="width: 22%; border: 0 solid white;" src="darktheme.png">
+ *   <img style="width: 22%; border: 0 solid white;" src="colorfultheme.png"><br>
+ * </div>
+ * <br><br><br><br><br><br><br><br><br><br><br>
+ * <br><br><br><br><br><br><br><br><br><br><br>
+ *
+ * \section sEdit Edit Menu
+ * <br><br><br><br><br><br><br><br><br><br><br>
+ *
+ * \section sView View Menu
+ * <br><br><br><br><br><br><br><br><br><br><br>
+ *
+ *
+ * \section sHelp Help Menu
+ * <br><br><br><br><br><br><br><br><br><br><br>
+ *
+ * \section sSrchSelection Search Selection
+ * <div style="border: 0 solid white; width: 60%; float: left; margin-left: 5%; margin-right: 15px;">
+ *   <img style="width: 100%; border: 0 solid white;" src="srchselection.png">
+ * </div>
+ *
+ * <div style="border: 0 solid white; width: 70%; margin-left: 5%; margin-right: 15px;">
+ *   <p>
+ *     In this part of the top section, it is possible to navigate directly to Chapter and Verse or to search for
+ *     passages which contain words or pharases.
+ *   </p>
+ * </div>
+ * <br><br><br><br><br><br>
+ *
+ * \section sWorksList The Works List
+ * <div style="border: 0 solid white; width: 25%; float: left; margin-left: 5%; margin-right: 15px;">
+ *   <img style="width: 100%; border: 0 solid white;" src="workslist.png">
+ * </div>
+ *
+ * <div style="width:70%; margin-right: 5%;"> 
+ *   <p>
+ *     In this portion of the window, the list of available works is displayed as a list tree. Works of various kinds
+ *     and in various languages may be shown depending on what is installed. For instance, there may be a King James Version
+ *     in English and that same work in Spanish or German. Each version will be displayed as required and may be selected
+ *     for display of the text in the Bible Text Display portion of the Main Window. By default, the English(US) King James Version
+ *     of the Bible is included.
+ *   </p><br><br>
+ *
+ *   <p style="width:40%; margin-right: 5%;">
+ *     It should also be noted that there may be non-Bible works shown in the list such as; Commentaries or Lexicons. That is
+ *     by design; in order to maintain the proper relationship to other data related to the use of the text display area.
+ *   </p>
+ * </div>
+ *
+ * <br><br><br><br><br><br><br><br><br><br><br>
+ * <br><br><br><br><br><br><br><br><br><br><br>
+ *
+ * \section sBibleText Bible Text Display
+ * <div style="border: 0 solid white; width: 50%; float: left; margin-left: 5%; margin-right: 15px;">
+ *   <img style="width: 100%; border: 0 solid white;" src="bibletext.png">
+ * </div>
+ * <br><br><br><br><br><br><br><br><br><br><br>
+ * <br><br><br><br><br><br><br><br><br>
+ *
+ * In this portion of the window, the text of the selected work is displayed as formatted text. The specific format is 
+ * configured in the settings.
+ *
+ * \note
+ *     It should also be noted that there may be differences from the display shown for each system and the platform used. For<br>
+ *     instance, the choices for available fonts and sizes may differ widely from Windows to Linux to Mac. Each system has<br>
+ *     specifics unique to that system. Font choices especially. Often platforms will try to use the specified font and match <br>
+ *     the available fonts if not available on the system in use, rather than producing an error. A good example is the <br>
+ *     <i>Arial</i> font. This font is not always available on all systems and all platforms. Linux, for example, may try to use<br> 
+ *     the <i>sans-serif</i>, <i>Liberation Sans</i>, <i>Ubuntu Sans</i> or <i>Noto Sans</i> font instead. This is not a bug, but a protection provided<br>
+ *     by your system platform to allow operation of an application with non-platform fonts. The application user must select<br>
+ *     an available font that displays as desired from the configuration settings. One should also note that not all font sizes <br>
+ *     are available for all fonts. The user should be judicious with font choices during configuration setup using a choice that<br>
+ *     displays the best for the system used.
+ *
+ * </div>
+ * <br><br><br><br><br><br><br>
+ *
+ * \section sStatusBar StatusBar Display
+ * <div style="border: 0 solid white; width: 40%; float: left; margin-left: 5%; margin-right: 15px;">
+ *   <img style="width: 100%; border: 0 solid white;" src="statusbar.png">
+ * </div>
+ * <br><br><br><br>
+ *
+ * <div style="width:70%; margin-left: 5%; margin-right: 5%;"> 
+ *   <p>
+ *     In this portion of the window, the application status is displayed for information and clarity. The specific display format is 
+ *     configured in the settings according to the style chosen.
+ *   </p>
+ *  <p>
+ *     The first status box displays information or error messages relating to the current bibile text or operation performed.<br><br>
+ *     The second status box displays additional info or messages related to the first status box. Often there is not a need for display
+ *     in this area and it may be blank.<br><br>
+ *     The third status box displays.....<br><br>
+ *     The fourth and final status box displays the current bible bookmark as Book and Chapter. For instance - Genesis 1
+ *  </p><br><br>
+ * </div>
+ * <br><br><br><br><br>
+ * <div style="font-family: serif; font-size: 10pt;">The content on this page is subject to frequent changes as the application developes.</div>
+ */

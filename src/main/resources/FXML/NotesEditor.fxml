@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kds.GUI.NotesEditorController">
+   <children>
+      <VBox prefHeight="664.0" prefWidth="690.0">
+         <children>
+            <MenuBar id="menuBar" fx:id="menuBar" prefWidth="690.0">
+               <menus>
+                  <Menu id="menuFile" fx:id="menuFile" mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem id="menuFileClose" fx:id="menuFileClose" mnemonicParsing="false" onAction="#actionClose" text="Close" />
+                     </items>
+                  </Menu>
+                  <Menu id="menuEdit" fx:id="menuEdit" mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem id="menuEditInsert" fx:id="menuEditInsert" mnemonicParsing="false" onAction="#actionEditInsert" text="Insert" />
+                        <MenuItem id="menuEditCut" fx:id="menuEditCut" mnemonicParsing="false" onAction="#actionEditCut" text="Cut" />
+                        <MenuItem id="menuEditCopy" fx:id="menuEditCopy" mnemonicParsing="false" onAction="#actionEditCopy" text="Copy" />
+                        <MenuItem id="menuEditDelete" fx:id="menuEditDelete" mnemonicParsing="false" onAction="#actionEditDelete" text="Delete" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem id="menuEditSetTextBold" fx:id="menuEditSetTextBold" mnemonicParsing="false" onAction="#actionEditSetTextBold" text="Bold" />
+                        <MenuItem id="menuEditSetTextItalic" fx:id="menuEditSetTextItalic" mnemonicParsing="false" onAction="#actionEditSetTextItalic" text="Italic" />
+                        <MenuItem id="menuEditSetTextUnderline" fx:id="menuEditTextUnderline" mnemonicParsing="false" onAction="#actionEditSetTextUnderline" text="Underline" />
+                     </items>
+                  </Menu>
+                  <Menu id="menuHelp" fx:id="menuHelp" mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem id="menuHelpAbout" fx:id="menuHelpAbout" mnemonicParsing="false" onAction="#actionHelpAbout" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <HTMLEditor id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="598.0" prefWidth="690.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <property name="LOG_FILE" value="${HOME}/bin/logs/BibleView.log"/>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>[%d{yyyy-MM-dd HH:mm:ss}] %level  %file:%line - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILEOUT" class="ch.qos.logback.core.FileAppender">
+    <file>${LOG_FILE}</file>
+    <append>true</append>
+    <!-- set immediateFlush to false for much higher logging throughput -->
+    <immediateFlush>true</immediateFlush>
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>[%d{yyyy-MM-dd HH:mm:ss}] %level %file:%line - %msg%n</pattern>
+    </encoder>
+  </appender>
+ 
+  <logger name="org"                              level="ALL" additivity="false"><appender-ref ref="FILEOUT"/></logger>
+  <logger name="org.kds"                          level="ALL" additivity="false"><appender-ref ref="FILEOUT"/></logger>
+  <logger name="org.kds.BibleViewApp"             level="ALL" additivity="false"><appender-ref ref="FILEOUT"/></logger>
+  <logger name="org.kds.IniUtil"                  level="ALL" additivity="false"><appender-ref ref="FILEOUT"/></logger>
+  <logger name="org.kds.GUI"                      level="ALL" additivity="false"><appender-ref ref="FILEOUT"/></logger>
+  <logger name="org.kds.GUI.MainWindowController" level="ALL" additivity="false"><appender-ref ref="FILEOUT"/></logger>
+
+  <root level="DEBUG"> 
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="FILEOUT" /> 
+  </root>
+</configuration>

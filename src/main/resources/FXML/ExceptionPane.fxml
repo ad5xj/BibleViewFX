@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<DialogPane id="ExceptionPane" fx:id="ExceptionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kds.GUI.ExceptionPaneController">
+    <header>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="558.0" prefWidth="800.0">
+         <children>
+            <VBox prefHeight="564.0" prefWidth="800.0">
+               <children>
+                  <Pane id="upperPane" fx:id="upperPane" prefHeight="302.0" prefWidth="800.0">
+                     <children>
+                        <Label id="lblMessage" fx:id="lblMessage" layoutX="66.0" layoutY="22.0" prefHeight="27.0" prefWidth="665.0">
+                           <graphic>
+                              <ImageView id="imgMsgIcon" fx:id="imgMsgIcon" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/process-stop.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Label>
+                        <ListView id="list" fx:id="list" layoutX="231.0" layoutY="102.0" prefHeight="200.0" prefWidth="338.0" />
+                     </children></Pane>
+                  <Pane id="lowerPane" fx:id="lowerPane" prefHeight="257.0" prefWidth="792.0" />
+               </children>
+            </VBox>
+         </children></AnchorPane>
+    </header>
+    <content>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+    </content>
+    <expandableContent>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+    </expandableContent>
+</DialogPane>
