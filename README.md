@@ -8,7 +8,10 @@ error reporting and logging using log4j and slf4j logging faciities.
 ### Purpose ###
 
 * This is a Linux development project using maven on Apache NetBeans 24+
-  This is a pre-alpha version still in development.
+  This is a pre-alpha development version. Meaning, while the project may
+  run at this point, there is still development of a lot of functionality
+  going on. This is not the final or preferred condition for release.
+  Contributors are welcome. See guidelines below.
 
 ### Requirements ###
 
